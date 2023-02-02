@@ -4,7 +4,7 @@ import { ContactInterface, RoomInterface } from "wechaty/impls";
 import { Configuration, OpenAIApi } from "openai";
 
 // ChatGPT error response configuration
-const chatgptErrorMessage = "🤖️：AI机器人摆烂了，请稍后再试～";
+const chatgptErrorMessage = "🤖️：听不懂你在说啥，我摆了！";
 
 // ChatGPT model configuration
 // please refer to the OpenAI API doc: https://beta.openai.com/docs/api-reference/introduction
