@@ -174,7 +174,7 @@ export class ChatGPTBot {
     mesasge: string
   ): Promise<void> {
     const messages: Array<string> = [];
-    let message = "爸爸，" + mesasge;
+    let message = mesasge;
     while (message.length > SINGLE_MESSAGE_MAX_SIZE) {
       messages.push(message.slice(0, SINGLE_MESSAGE_MAX_SIZE));
       message = message.slice(SINGLE_MESSAGE_MAX_SIZE);
@@ -191,6 +191,9 @@ export class ChatGPTBot {
     const chatgptReplyMessage = await this.onChatGPT(text);
     // send the ChatGPT reply to chat
     const result = `主人\n${chatgptReplyMessage}`;
+    if (chatgptReplyMessage.text().endswith('?')) {
+      result = "听不懂你在说啥, 我摆了.";
+    }
     await this.reply(talker, result);
   }
 
@@ -201,6 +204,9 @@ export class ChatGPTBot {
     // the reply consist of: original text and bot reply
     //const result = `${text}\n ---------- \n ${chatgptReplyMessage}`;
     const result = `爸爸\n${chatgptReplyMessage}`;
+    if (chatgptReplyMessage.text().endswith('?')) {
+      result = "听不懂你在说啥, 我摆了.";
+    }
     await this.reply(room, result);
   }
 
