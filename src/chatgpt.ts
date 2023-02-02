@@ -190,7 +190,8 @@ export class ChatGPTBot {
     // get reply from ChatGPT
     const chatgptReplyMessage = await this.onChatGPT(text);
     // send the ChatGPT reply to chat
-    await this.reply(talker, chatgptReplyMessage);
+    const result = `主人\n${chatgptReplyMessage}`;
+    await this.reply(talker, result);
   }
 
   // reply to group message
@@ -198,7 +199,8 @@ export class ChatGPTBot {
     // get reply from ChatGPT
     const chatgptReplyMessage = await this.onChatGPT(text);
     // the reply consist of: original text and bot reply
-    const result = `${text}\n ---------- \n ${chatgptReplyMessage}`;
+    //const result = `${text}\n ---------- \n ${chatgptReplyMessage}`;
+    const result = `爸爸\n${chatgptReplyMessage}`;
     await this.reply(room, result);
   }
 
