@@ -35,6 +35,10 @@ async function main() {
           await message.say("World!");
           return;
         }
+        else if (message.text.startwith("叫爸爸"){
+          await message.say("爸爸");
+          return;
+        }
         // handle message for chatGPT bot
         await chatGPTBot.onMessage(message);
       } catch (e) {
