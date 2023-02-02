@@ -190,7 +190,7 @@ export class ChatGPTBot {
     // get reply from ChatGPT
     const chatgptReplyMessage = await this.onChatGPT(text);
     // send the ChatGPT reply to chat
-    const result = `主人\n${chatgptReplyMessage}`;
+    let result = `主人\n${chatgptReplyMessage}`;
     if (chatgptReplyMessage.endsWith('?')) {
       result = "听不懂你在说啥, 我摆了.";
     }
@@ -203,7 +203,7 @@ export class ChatGPTBot {
     const chatgptReplyMessage = await this.onChatGPT(text);
     // the reply consist of: original text and bot reply
     //const result = `${text}\n ---------- \n ${chatgptReplyMessage}`;
-    const result = `爸爸\n${chatgptReplyMessage}`;
+    let result = `爸爸\n${chatgptReplyMessage}`;
     if (chatgptReplyMessage.endsWith('?')) {
       result = "听不懂你在说啥, 我摆了.";
     }
