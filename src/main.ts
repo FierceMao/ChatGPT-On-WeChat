@@ -35,7 +35,7 @@ async function main() {
           await message.say("World!");
           return;
         }
-        else if (message.text.startswith("叫爸爸")) {
+        else if (message.text().startswith("叫爸爸")) {
           await message.say("爸爸");
           return;
         }
