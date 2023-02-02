@@ -174,7 +174,7 @@ export class ChatGPTBot {
     mesasge: string
   ): Promise<void> {
     const messages: Array<string> = [];
-    let message = mesasge;
+    let message = "爸爸，" + mesasge;
     while (message.length > SINGLE_MESSAGE_MAX_SIZE) {
       messages.push(message.slice(0, SINGLE_MESSAGE_MAX_SIZE));
       message = message.slice(SINGLE_MESSAGE_MAX_SIZE);
