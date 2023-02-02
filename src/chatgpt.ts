@@ -191,7 +191,7 @@ export class ChatGPTBot {
     const chatgptReplyMessage = await this.onChatGPT(text);
     // send the ChatGPT reply to chat
     const result = `主人\n${chatgptReplyMessage}`;
-    if (chatgptReplyMessage.endswith('?')) {
+    if (chatgptReplyMessage.endsWith('?')) {
       result = "听不懂你在说啥, 我摆了.";
     }
     await this.reply(talker, result);
@@ -204,7 +204,7 @@ export class ChatGPTBot {
     // the reply consist of: original text and bot reply
     //const result = `${text}\n ---------- \n ${chatgptReplyMessage}`;
     const result = `爸爸\n${chatgptReplyMessage}`;
-    if (chatgptReplyMessage.endswith('?')) {
+    if (chatgptReplyMessage.endsWith('?')) {
       result = "听不懂你在说啥, 我摆了.";
     }
     await this.reply(room, result);
